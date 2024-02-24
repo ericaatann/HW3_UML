@@ -1,0 +1,25 @@
+@startuml
+
+object "<u> php_demo1 : Folder" as php_demo1
+object "<u> sourceFiles : Folder" as sourceFiles
+object "<u> cache : Folder" as cache
+object "<u> publicFolder : Folder" as publicFolder
+object "<u> includePath : Folder" as includePath
+object "<u> remoteFiles : Folder" as remoteFiles
+
+object "<u> htaccess : File" as htaccess
+object "<u> routerPhp : File" as routerPhp
+object "<u> indexHtml : File" as indexHtml
+
+php_demo1 -- sourceFiles
+php_demo1 -- includePath
+php_demo1 -- remoteFiles
+
+sourceFiles -- cache
+sourceFiles -- publicFolder
+
+publicFolder -- htaccess
+publicFolder -- routerPhp
+publicFolder -- indexHtml
+
+@enduml

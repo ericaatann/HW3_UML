@@ -1,0 +1,28 @@
+@startuml
+
+class Folder {
+  - name: String
+  - subFolders: List<Folder>
+  - files: List<File>
+
+  + Folder(name: String)
+  + addSubFolder(subFolder: Folder): void
+  + addFile(file: File): void
+  + delete(): void
+  + removeFile(file: File): void
+  + print(): void
+}
+
+class File {
+  - name: String
+  - parentFolder: Folder
+
+  + File(name: String, parentFolder: Folder)
+  + delete(): void
+  + print(): void
+}
+
+Folder "1" *-- "*" File: contains
+Folder "1" *-- "*" Folder: contains
+
+@enduml
