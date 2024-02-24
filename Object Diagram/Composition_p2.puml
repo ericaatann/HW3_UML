@@ -11,15 +11,15 @@ object "<u> htaccess : File" as htaccess
 object "<u> routerPhp : File" as routerPhp
 object "<u> indexHtml : File" as indexHtml
 
-php_demo1 -- sourceFiles
-php_demo1 -- includePath
-php_demo1 -- remoteFiles
+php_demo1 *-- sourceFiles
+php_demo1 *-- includePath
+php_demo1 *-- remoteFiles
 
-sourceFiles -- cache
-sourceFiles -- publicFolder
+sourceFiles *-- cache
+sourceFiles *-- publicFolder
 
-publicFolder -- htaccess
-publicFolder -- routerPhp
-publicFolder -- indexHtml
+publicFolder *-- htaccess
+publicFolder *-- routerPhp
+publicFolder *-- indexHtml
 
 @enduml
